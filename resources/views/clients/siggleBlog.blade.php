@@ -106,12 +106,12 @@
                                 <input type="hidden" name="post_id" value="{{ $post->id }}">
                                 <div class="row">
                                     <div class="col form-group">
-                                        <input name="name" type="text" class="form-control" placeholder="Your Name*">
+                                        <input name="name" type="text" class="form-control" placeholder="Your Name*" required>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col form-group">
-                                        <textarea name="comment" class="form-control" placeholder="Your Comment*"></textarea>
+                                        <textarea name="comment" class="form-control" placeholder="Your Comment*" required></textarea>
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Post Comment</button>
