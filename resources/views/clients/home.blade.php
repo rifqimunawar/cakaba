@@ -382,7 +382,7 @@
                                     <span class="post-author"> / Julia Parker</span>
                                 </div>
                                 <h3 class="post-title">{{ $item->title }}</h3>
-                                <a href="/article-dema-uninus/{{ $item->slug }}"
+                                <a href="/article/{{ $item->slug }}"
                                     class="readmore stretched-link"><span>Read More</span><i
                                         class="bi bi-arrow-right"></i></a>
                             </div>

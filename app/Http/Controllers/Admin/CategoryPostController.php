@@ -13,10 +13,10 @@ class CategoryPostController extends Controller
    */
   public function index()
   {
-      $categories =Category::all();
+      $categories =Category::with('post')->get();
 
       // dd($categories);
-      return view("admin.categories.index", compact("categories"));
+      return view("server.categories.index", compact("categories"));
   }
 
   /**
@@ -24,7 +24,7 @@ class CategoryPostController extends Controller
    */
   public function create()
   {
-      return view("admin.categories.create");
+      return view("server.categories.create");
   }
 
   /**
@@ -45,7 +45,7 @@ class CategoryPostController extends Controller
   public function edit($id, Request $request, Category $categories)
   {
       $categories=Category::find($id);
-      return view('admin.categories.edit', compact('categories'));
+      return view('server.categories.edit', compact('categories'));
   }
 
   /**

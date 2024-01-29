@@ -152,7 +152,7 @@
                                         <img src="{{ asset('img/' . $item->img) }}" alt=""
                                             style="width: 80px; height:50px; object-fit:cover" class="flex-shrink-0">
                                         <div>
-                                            <h4><a href="/article-dema-uninus/{{ $item->slug }}">{{ $item->title }}</a>
+                                            <h4><a href="/article/{{ $item->slug }}">{{ $item->title }}</a>
                                             </h4>
                                             <time datetime="{{ $item->created_at->format('Y-m-d') }}">
                                                 {{ $item->created_at->format('d M, Y') }}

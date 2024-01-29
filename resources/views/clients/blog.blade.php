@@ -27,7 +27,7 @@
                                 {{ $item->created_at->format('d M, Y') }}
                             </time>
                         </span>
-                        <a href="/article-dema-uninus/{{ $item->slug }}">
+                        <a href="/article/{{ $item->slug }}">
                             <h4 class="post-title">{{ $item->title }}</h4>
                             <span>Read More</span><i class="bi bi-arrow-right"></i>
                         </a>

@@ -45,7 +45,7 @@ Route::get('/aspirasi',[ClientAspirasiController::class, 'index'])->name('client
 Route::post('/aspirasi/create',[ClientAspirasiController::class, 'create'])->name('client.aspirasiCreate');
 Route::get('/galeri',[ClientGaleriController::class, 'index'])->name('client.galeri');
 Route::get('/blog',[PostController::class, 'index'])->name('client.blog');
-Route::get('/article-dema-uninus/{slug}',[PostController::class, 'show'])->name('client.blogShow');
+Route::get('/article/{slug}',[PostController::class, 'show'])->name('client.blogShow');
 Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 Route::get('/kominfo', [CommentController::class, 'kominfo']);
 
