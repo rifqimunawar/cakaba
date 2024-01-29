@@ -97,7 +97,7 @@
                         <a class="collapse-item" href="{{ route('index.post') }}">List Blogs</a>
                         <a class="collapse-item" href="{{ route('create.post') }}">New Blogs</a>
                         <a class="collapse-item" href="{{ route('index.categoryPost') }}">Category</a>
-                        <a class="collapse-item" href="">Tags</a>
+                        <a class="collapse-item" href="{{ route('index.tagPost') }}">Tags</a>
                     </div>
                 </div>
             </li>

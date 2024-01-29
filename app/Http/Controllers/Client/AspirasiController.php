@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Client;
 
 use App\Models\Aspirasi;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -10,7 +11,8 @@ use RealRashid\SweetAlert\Facades\Alert;
 class AspirasiController extends Controller
 {
     public function index(){
-      return view("clients.aspirasi");
+      $navbarCategory = Category::all();
+      return view('clients.aspirasi', compact('navbarCategory'));
     }
 
     public function create(Request $request){

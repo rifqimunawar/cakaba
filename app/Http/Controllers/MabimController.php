@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Models\Mabim;
-use Barryvdh\DomPDF\Facade\Pdf;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class MabimController extends Controller
@@ -34,7 +35,8 @@ class MabimController extends Controller
      */
     public function create()
     {
-      return view ('clients.mabim.create');
+      $navbarCategory = Category::all();
+      return view ('clients.mabim.create', compact('navbarCategory'));
     }
 
     /**
@@ -57,8 +59,9 @@ class MabimController extends Controller
 
     // Mengganti single quote dengan double quote dan menggabungkan nama ke dalam string
     Alert::success('Terima Kasih', $mabim->name . ' anda sudah terdaftar untuk mengikuti mabim');
-    
-    return redirect()->route('show.mabim', ['id' => $mabim->id]);
+    $navbarCategory = Category::all();
+
+    return redirect()->route('show.mabim', ['id' => $mabim->id])->with(compact('navbarCategory'));
 }
 
 
@@ -68,7 +71,8 @@ class MabimController extends Controller
     public function show($id, Mabim $mabim)
     {
         $peserta = Mabim::find($id);
-        return view('clients.mabim.success', compact('peserta'));
+        $navbarCategory = Category::all();
+        return view('clients.mabim.success', compact('peserta', 'navbarCategory'));
     }
     
 

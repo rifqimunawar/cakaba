@@ -40,8 +40,8 @@
                             </div>
                             <div class="text-center">
                                 <a href="{{ route('index.pengurus') }}"
-                                    class="btn bg-gradient-success w-30 my-4 mb-2">Kembali</a>
-                                <button type="sumbit" class="btn bg-gradient-primary w-30 my-4 mb-2">Simpan</button>
+                                    class="btn btn-success w-30 my-4 mb-2">Kembali</a>
+                                <button type="sumbit" class="btn btn-primary w-30 my-4 mb-2">Simpan</button>
                             </div>
                         </form>
                     </div>

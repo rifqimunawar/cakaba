@@ -8,6 +8,7 @@ use App\Models\Agenda;
 use App\Models\Galeri;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 
 class HomeController extends Controller
 {
@@ -16,10 +17,11 @@ class HomeController extends Controller
       $dataHome = Home::all();
       $galery = Galeri::latest()->take(3)->get();
       $postLatest = Post::where('status', 1)->latest()->get();
-      $dataKegiatan = Agenda::latest()->get();    
+      $dataKegiatan = Agenda::latest()->get();
+      $navbarCategory = Category::all();
   
       // @dd($dataHome);
-      return view('clients.home', compact('dataHome', 'dataKegiatan', 'postLatest', 'galery'));
+      return view('clients.home', compact('dataHome', 'dataKegiatan', 'postLatest', 'galery', 'navbarCategory'));
   }
   
   

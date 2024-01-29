@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Senat - Teknik</title>
+    <title>HMI - Komsyarkum</title>
     <!-- Favicons -->
     <link href="{{ asset('img/logo-senat.png') }}" rel="icon">
     <link href="{{ asset('img/logo-senat.png') }}" rel="apple-touch-icon">

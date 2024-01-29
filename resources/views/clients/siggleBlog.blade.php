@@ -136,7 +136,7 @@
                         <div class="sidebar-item categories">
                             <ul>
                                 @foreach ($categories as $item)
-                                    <li><a href="#">{{ $item->title }}
+                                    <li><a href="/blog/category/{{ $item->slug }}">{{ $item->title }}
                                             <span>({{ $item->post->count() }})</span></a></li>
                                 @endforeach
                             </ul>

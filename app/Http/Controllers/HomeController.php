@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Home;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class HomeController extends Controller
 {
@@ -98,7 +99,7 @@ class HomeController extends Controller
       }
       
       $home->save();
-
+      Alert::success('Terima Kasih', 'Home Page Berhasil Diubah');
       // Redirect ke halaman yang sesuai setelah berhasil menyimpan data
       return redirect()->route('index.home');
     }

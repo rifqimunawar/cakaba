@@ -34,11 +34,29 @@ class PostController extends Controller
       // get data post dengan tagnya 
       // =======================
       $postsWithTags = Post::with('tags')->get();
+      $navbarCategory = Category::all();
 
-      // dd($postsWithTags);
+      // dd($postLatest);
 
-      return view('clients.blog', compact('posts', 'postLatest'));
+      return view('clients.blog', compact('posts', 'postLatest', 'navbarCategory'));
     }
+
+    public function category($slug){
+      $categoryPosts = Post::with('category')
+          ->whereHas('category', function ($query) use ($slug) {
+              $query->where('slug', $slug);
+          })
+          ->get();
+  
+      $thisCategory = Category::where('slug', $slug)->first();
+      $navbarCategory = Category::all();
+  
+      return view('clients.blogCategory', compact('categoryPosts', 'thisCategory', 'navbarCategory'));
+  }
+  
+  
+
+
 
     // public function show($slug)
     // {
@@ -89,7 +107,8 @@ class PostController extends Controller
     $randomView =   rand(1,4);
       $post->increment('views', $randomView);
       $post->save();
+    $navbarCategory = Category::all();
       // dd($tags);
-      return view('clients.siggleBlog', compact('post', 'categories', 'postLatest', 'tags'));
+      return view('clients.siggleBlog', compact('post', 'categories', 'postLatest', 'tags', 'navbarCategory'));
     }
 }

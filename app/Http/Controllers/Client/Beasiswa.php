@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers\Client;
 
-use App\Models\Beasiswa as BeasiswaModel;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Beasiswa as BeasiswaModel;
 
 class Beasiswa extends Controller
 {
     public function index (){
       $beasiswa = BeasiswaModel :: latest()->get();
-      return view ('clients.beasiswa', compact('beasiswa'));
+      $navbarCategory = Category::all();
+      return view ('clients.beasiswa', compact('beasiswa', 'navbarCategory'));
     }
 
     public function show($id){

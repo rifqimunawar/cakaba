@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pengurus;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PengurusController extends Controller
 {
@@ -52,7 +53,7 @@ class PengurusController extends Controller
       }
       
       $pengurus->save();
-
+      Alert::success('Terima Kasih', 'Pengurus Berhasil Ditambahkan!!!');
       // Redirect ke halaman yang sesuai setelah berhasil menyimpan data
       return redirect()->route('index.pengurus');
     }
@@ -93,7 +94,7 @@ class PengurusController extends Controller
       }
       
       $pengurus->save();
-
+      Alert::success('Terima Kasih', 'Pengurus Berhasil Diubah');
       // Redirect ke halaman yang sesuai setelah berhasil menyimpan data
       return redirect()->route('index.pengurus');
     }

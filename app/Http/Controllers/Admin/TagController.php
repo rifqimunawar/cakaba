@@ -10,15 +10,16 @@ class TagController extends Controller
 {
     public function index()
     {
-        $tags = Tag::paginate(5);
+        $tags = Tag::with('posts')->get();
 
-        return view('admin.tags.index', compact('tags'));
+        // dd($tags);
+        return view('server.tags.index', compact('tags'));
 
     }
 
     public function create()
     {
-        return view('admin.tags.create');
+        return view('server.tags.create');
     }
 
     public function store(Request $request)
@@ -32,7 +33,7 @@ class TagController extends Controller
     {
         $tag = Tag::findOrFail($id);
 
-        return view('admin.tags.edit', compact('tag'));
+        return view('server.tags.edit', compact('tag'));
     }
 
     public function update(Request $request, int $id)

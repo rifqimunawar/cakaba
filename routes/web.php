@@ -14,6 +14,7 @@ use App\Http\Controllers\Client\AboutController;
 use App\Http\Controllers\Client\CommentController;
 use App\Http\Controllers\Admin\CategoryPostController;
 use App\Http\Controllers\Admin\PostController as AdminPostController;
+use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Client\AspirasiController as ClientAspirasiController;
 use App\Http\Controllers\Client\Beasiswa;
 use App\Http\Controllers\Client\HomeController as ClientHomeController;
@@ -45,6 +46,7 @@ Route::get('/aspirasi',[ClientAspirasiController::class, 'index'])->name('client
 Route::post('/aspirasi/create',[ClientAspirasiController::class, 'create'])->name('client.aspirasiCreate');
 Route::get('/galeri',[ClientGaleriController::class, 'index'])->name('client.galeri');
 Route::get('/blog',[PostController::class, 'index'])->name('client.blog');
+Route::get('/blog/category/{slug}',[PostController::class, 'category'])->name('client.blogCategory');
 Route::get('/article/{slug}',[PostController::class, 'show'])->name('client.blogShow');
 Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 Route::get('/kominfo', [CommentController::class, 'kominfo']);
@@ -134,6 +136,15 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/admin/category/edit/{id}', [CategoryPostController::class, 'edit'])->name('edit.categoryPost');
   Route::put('/admin/category/update/{id}', [CategoryPostController::class, 'update'])->name('update.categoryPost');
   Route::delete('/admin/category/destroy/{id}', [CategoryPostController::class, 'destroy'])->name('categoryPost.destroy');
+
+  // CRUD TAGS BLOG ADMIN
+  Route::get('/admin/tag', [TagController::class, 'index'])->name('index.tagPost');
+  Route::get('/admin/tag/create', [TagController::class, 'create'])->name('create.tagPost');
+  Route::post('/admin/tag/store', [TagController::class, 'store'])->name('store.tagPost');
+  Route::get('/admin/tag/show/{id}', [TagController::class, 'show'])->name('show.tagPost');
+  Route::get('/admin/tag/edit/{id}', [TagController::class, 'edit'])->name('edit.tagPost');
+  Route::put('/admin/tag/update/{id}', [TagController::class, 'update'])->name('update.tagPost');
+  Route::delete('/admin/tag/destroy/{id}', [TagController::class, 'destroy'])->name('tagPost.destroy');
 
   // CRUD POST BLOG ADMIN
   Route::get('/admin/post', [AdminPostController::class, 'index'])->name('index.post');
