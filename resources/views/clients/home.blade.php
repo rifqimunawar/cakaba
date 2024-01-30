@@ -29,20 +29,20 @@
 
 
         <!-- ======= Values Section ======= -->
-        <section id="values" class="values">
+        {{-- <section id="values" class="values">
 
             <div class="container" data-aos="fade-up">
 
                 <header class="section-header">
-                    {{-- <h2>Our Values</h2>
-                    <p>Datang dan Meriahkan</p> --}}
+                    <h2>Our Values</h2>
+                    <p>Datang dan Meriahkan</p>
                 </header>
 
                 <div class="row">
 
                     @foreach ($dataKegiatan as $item)
                         <div class="container mt-5">
-                            {{-- <table class="table bordered-table table-kegiatan d-flex align-items-center justify-content-center">
+                            <table class="table bordered-table table-kegiatan d-flex align-items-center justify-content-center">
                         <thead>
                             <tr>
                               <th scope="col" class="date-header d-flex align-items-center justify-content-center"><time datetime="{{ $item->created_at->format('Y-m-d') }}">{{ $item->created_at->format('d M, Y') }}</time></th>
@@ -58,7 +58,7 @@
                                 </th>
                             </tr>
                         </thead>
-                    </table> --}}
+                    </table>
                         </div>
                     @endforeach
 
@@ -67,7 +67,7 @@
 
             </div>
 
-        </section><!-- End Values Section -->
+        </section> --}}
 
 
         <!-- ======= Features Section ======= -->
@@ -335,7 +335,7 @@
 
                     <div class="row g-0 portfolio-container">
 
-                        @foreach ($galery->take(12) as $item)
+                        @foreach ($galery->take(4) as $item)
                             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
                                 <img src="{{ asset('img/' . $item->img) }}" class="img-fluid" alt=""
                                     style="width:350px; height:200px; object-fit:cover">

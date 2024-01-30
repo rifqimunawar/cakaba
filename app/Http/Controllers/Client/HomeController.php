@@ -15,7 +15,7 @@ class HomeController extends Controller
   public function index()
   {
       $dataHome = Home::all();
-      $galery = Galeri::latest()->take(3)->get();
+      $galery = Galeri::latest()->take(4)->get();
       $postLatest = Post::where('status', 1)->latest()->get();
       $dataKegiatan = Agenda::latest()->get();
       $navbarCategory = Category::all();

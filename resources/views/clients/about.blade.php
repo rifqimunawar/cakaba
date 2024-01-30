@@ -66,10 +66,11 @@
             <div class="row gy-5">
 
                 @foreach ($pengurusData as $item)
-                    <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="200">
                         <div class="team-member">
                             <div class="member-img">
-                                <img src="{{ asset('img/'. $item->img) }}" class="img-fluid" alt="">
+                                <img src="{{ asset('img/'. $item->img) }}" class="img-fluid" alt="" 
+                                style="height:250px; width: 300px; object-fit:cover">
                             </div>
                             <div class="member-info">
                                 <div class="social">
